@@ -11,7 +11,9 @@ wget https://github.com/github/codeql-action/releases/download/codeql-bundle-202
 chmod +x codeql-runner-linux
 ls -lah
 commit_id=`git rev-parse HEAD`
+echo " COMMIT ID is $commit_id"
 refs_value=`git symbolic-ref HEAD`
+echo "REF is $refs_value"
 ./codeql-runner-linux init --repository rohitdemo/sru-codeql-js --github-url https://github.com --github-auth $GITHUB_CREDS_PSW
 ./codeql-runner-linux analyze --repository rohitdemo/sru-codeql-js --github-url https://github.com --github-auth $GITHUB_CREDS_PSW --commit $commit_id --ref $refs_value '''
       }
