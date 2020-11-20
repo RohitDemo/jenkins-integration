@@ -2,6 +2,9 @@ pipeline {
   agent any
   stages {
     stage('CodeQL Scan') {
+      environment {
+        GITHUB_CREDS = credentials('pat-that-may-work')
+      }
       steps {
         sh '''ls -lah
 wget https://github.com/github/codeql-action/releases/download/codeql-bundle-20200826/codeql-runner-linux 
