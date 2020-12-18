@@ -16,8 +16,9 @@ commit_id=`git rev-parse HEAD`
 echo " COMMIT ID is $commit_id"
 refs_value=`git symbolic-ref HEAD`
 echo "REF is $refs_value"
-cd codeql-bundle
-ls -lah'''
+./codeql-bundle/codeql-bundle/codeql/tools/linux64/runner-linux init --repository rohitdemo/jenkins-ghas --github-url https://github.com --github-auth $GITHUB_CREDS_PSW
+./codeql-bundle/codeql-bundle/codeql/tools/linux64/runner-linux analyze --repository ohitdemo/jenkins-ghas --github-url https://github.com --github-auth $GITHUB_CREDS_PSW --commit $commit_id --ref $refs_value
+'''
       }
     }
 
