@@ -16,7 +16,7 @@ commit_id=`git rev-parse HEAD`
 echo " COMMIT ID is $commit_id"
 refs_value=`git symbolic-ref HEAD`
 echo "REF is $refs_value"
-cd codeql-bundle/codeql/tools/linux64/
+cd codeql-bundle
 ls -lah'''
       }
     }
