@@ -16,6 +16,7 @@ commit_id=`git rev-parse HEAD`
 echo " COMMIT ID is $commit_id"
 refs_value=`git symbolic-ref HEAD`
 echo "REF is $refs_value"
+'''
       }
     }
 
